@@ -1,0 +1,2 @@
+keypair = "terraform_demo"
+instance_count = 2
