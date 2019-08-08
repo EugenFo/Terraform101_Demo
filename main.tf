@@ -12,4 +12,10 @@ resource "aws_instance" "instance_demo" {
   tags = {
     Name = "Webserver-${count.index + 1}"
   }
+
+  user_data = "${file("init.sh")}"
+}
+
+output "aws_ec2_public-ip" {
+  value = "${aws_instance.instance_demo.*.public_ip}"
 }
