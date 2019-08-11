@@ -3,7 +3,7 @@ resource "aws_instance" "instance_demo" {
 
   ami = "ami-0cd855c8009cb26ef"
   availability_zone = "eu-central-1a"
-  instance_type = "t2.micro"
+  instance_type = "${var.instance_type}"
   key_name = "${var.keypair}"
   associate_public_ip_address = true
   subnet_id = "${aws_subnet.subnet_demo.id}"
